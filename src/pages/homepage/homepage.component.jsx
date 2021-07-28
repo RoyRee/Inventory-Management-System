@@ -1,10 +1,12 @@
 import React from 'react';
-// import './homepage.styles.css';
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './homepage.styles.css';
+import Directory from '../../components/Directory/directory.component';
+
 
 const Homepage =() =>(
     <div className='homepage'>
-        <h1 class="text-center">Dashboard</h1>
+        <h1 className="text-center">Dashboard</h1>
+        <Directory />
     </div>
 )
 
