@@ -12,39 +12,45 @@ class Directory extends React.Component{
                     title: 'Benificiary List ',
                     imageUrl: 'https://svgshare.com/i/Za7.svg',
                     id:1,
-                    rowvalue: false 
+                    rowvalue: false,
+                    linkUrl : 'beneficiary' 
                 },
                 {
                     title: 'Sales ',
                     imageUrl: 'https://svgshare.com/i/Z_n.svg',
                     id:2,
-                    rowvalue: false
+                    rowvalue: false,
+                    linkUrl : 'sales'
                 },
                 {
                     title: 'Settings ',
                     imageUrl: 'https://svgshare.com/i/ZZv.svg',
                     id:3,
-                    rowvalue: true
+                    rowvalue: true,
+                    linkUrl : 'settings'
                 },
                 {
                     title: 'Add Benificiary ',
                     imageUrl: 'https://svgshare.com/i/Z_k.svg',
                     id:4,
-                    rowvalue: false
+                    rowvalue: false,
+                    linkUrl : 'addBenificiary'
                     
                 },
                 {
                     title: 'QR Scanner ',
                     imageUrl: 'https://svgshare.com/i/ZZY.svg',
                     id:5,
-                    rowvalue: false
+                    rowvalue: false,
+                    linkUrl : 'scanner'
                     
                 },
                 {
                     title: 'QR Scanner ',
                     imageUrl: 'https://svgshare.com/i/ZZY.svg',
                     id:6,
-                    rowvalue: false
+                    rowvalue: false,
+                    linkUrl : 'scanner'
                    
                 }
 
@@ -63,7 +69,7 @@ class Directory extends React.Component{
                 
                 <div className='container'>
                     <div className = 'sub-container'>
-                         <div className="row row-cols-3" > 
+                    <div className="row row-cols-sm-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3"> 
                             
 
                 

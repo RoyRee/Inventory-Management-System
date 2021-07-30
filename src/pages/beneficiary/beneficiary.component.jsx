@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './beneficiary.styles.css';
 
 
 const BeneficiaryForm = () =>(
