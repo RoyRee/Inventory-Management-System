@@ -2,49 +2,54 @@ import React from 'react';
 import './directory.styles.css';
 import MenuItem from '../menu-item/menu-item.component';
 
-
 class Directory extends React.Component{
     constructor(props){
         super(props);
         this.state={
             sections : [
                 {
-                    title: 'Benificiary List ',
+                    title: 'Vendors List ',
                     imageUrl: 'https://svgshare.com/i/Za7.svg',
                     id:1,
-                    rowvalue: false 
+                    rowvalue: false,
+                    linkUrl : 'Vendor' 
                 },
                 {
                     title: 'Sales ',
                     imageUrl: 'https://svgshare.com/i/Z_n.svg',
                     id:2,
-                    rowvalue: false
+                    rowvalue: false,
+                    linkUrl : 'sales'
                 },
                 {
                     title: 'Settings ',
                     imageUrl: 'https://svgshare.com/i/ZZv.svg',
                     id:3,
-                    rowvalue: true
+                    rowvalue: true,
+                    linkUrl : 'settings'
                 },
                 {
-                    title: 'Add Benificiary ',
+                    title: 'Add Vendor ',
                     imageUrl: 'https://svgshare.com/i/Z_k.svg',
                     id:4,
-                    rowvalue: false
+                    rowvalue: false,
+                    linkUrl : 'addVendor'
                     
                 },
                 {
                     title: 'QR Scanner ',
                     imageUrl: 'https://svgshare.com/i/ZZY.svg',
                     id:5,
-                    rowvalue: false
+                    rowvalue: false,
+                    linkUrl : 'scanner'
                     
                 },
                 {
                     title: 'QR Scanner ',
                     imageUrl: 'https://svgshare.com/i/ZZY.svg',
                     id:6,
-                    rowvalue: false
+                    rowvalue: false,
+                    linkUrl : 'scanner'
                    
                 }
 
@@ -63,16 +68,18 @@ class Directory extends React.Component{
                 
                 <div className='container'>
                     <div className = 'sub-container'>
-                         <div className="row row-cols-3" > 
+                    <div className="row row-cols-sm-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3"> 
                             
 
                 
                 {
-                    this.state.sections.map(({id,rowvalue, ...otherSectionProps}) =>{
+                    this.state.sections.map(({id, ...otherSectionProps}) =>{
 
                         return (   
-                                                                                                    
-                                    <MenuItem key={id} {...otherSectionProps} />                             
+                                                                                        
+                                    <MenuItem key={id} {...otherSectionProps} /> 
+                                   
+                                                              
                         )
                     })
                 }
