@@ -2,18 +2,17 @@ import React from 'react';
 import './directory.styles.css';
 import MenuItem from '../menu-item/menu-item.component';
 
-
 class Directory extends React.Component{
     constructor(props){
         super(props);
         this.state={
             sections : [
                 {
-                    title: 'Benificiary List ',
+                    title: 'Vendors List ',
                     imageUrl: 'https://svgshare.com/i/Za7.svg',
                     id:1,
                     rowvalue: false,
-                    linkUrl : 'beneficiary' 
+                    linkUrl : 'Vendor' 
                 },
                 {
                     title: 'Sales ',
@@ -30,11 +29,11 @@ class Directory extends React.Component{
                     linkUrl : 'settings'
                 },
                 {
-                    title: 'Add Benificiary ',
+                    title: 'Add Vendor ',
                     imageUrl: 'https://svgshare.com/i/Z_k.svg',
                     id:4,
                     rowvalue: false,
-                    linkUrl : 'addBenificiary'
+                    linkUrl : 'addVendor'
                     
                 },
                 {
@@ -74,11 +73,13 @@ class Directory extends React.Component{
 
                 
                 {
-                    this.state.sections.map(({id,rowvalue, ...otherSectionProps}) =>{
+                    this.state.sections.map(({id, ...otherSectionProps}) =>{
 
                         return (   
-                                                                                                    
-                                    <MenuItem key={id} {...otherSectionProps} />                             
+                                                                                        
+                                    <MenuItem key={id} {...otherSectionProps} /> 
+                                   
+                                                              
                         )
                     })
                 }
