@@ -1,5 +1,5 @@
 import React from 'react';
-import './nav-bar.styles.css';
+import './Nav-bar.styles.css';
 import NavItem from '../Nav-item/nav-item.component';
 import {ReactComponent as ReactLogo} from '../../assests/logo.svg';
 
