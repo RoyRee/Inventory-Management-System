@@ -1,8 +1,6 @@
 
 
 .navbar{
-    width:5rem;
-    height: 100vh;
     position:fixed;
     background-color: var(--background-primary);
     transition: width 200ms ease;
@@ -45,12 +43,8 @@
     max-width:2rem;
     margin: 0 1.5rem;
 }
-.navbar:hover{
-    width: 16rem;
-}
-.navbar:hover .link-text{
-    display:block;
-}
+
+
 .fa-primary{
 color:#ff7eee;
 }

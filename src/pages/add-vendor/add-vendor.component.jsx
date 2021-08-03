@@ -1,11 +1,11 @@
 import React from 'react';
-import './beneficiary.styles.css';
+import './add-vendor.styles.css';
 
 
-const BeneficiaryForm = () =>(
+const AddVendor = () =>(
     <div>
           <h1 className="text-center">Add Vendor details</h1>
-           
+           <div className="container">
           <div className='card shadow p-3 mb-5 bg-white rounded' id='card-vendor-div'>
               <div id="form-margin">
                 <form>
@@ -53,7 +53,7 @@ const BeneficiaryForm = () =>(
                     </form>
                 </div>
             </div>
-            
+        </div>
 
              
 
@@ -61,4 +61,4 @@ const BeneficiaryForm = () =>(
 )
 
 
-export default BeneficiaryForm;
+export default AddVendor;

@@ -8,18 +8,18 @@ class Directory extends React.Component{
         this.state={
             sections : [
                 {
-                    title: 'Vendors List ',
-                    imageUrl: 'https://svgshare.com/i/Za7.svg',
+                    title: 'Add Vendor ',
+                    imageUrl: 'https://svgshare.com/i/Z_k.svg',
                     id:1,
                     rowvalue: false,
                     linkUrl : 'Vendor' 
                 },
                 {
-                    title: 'Sales ',
+                    title: 'Add Bill ',
                     imageUrl: 'https://svgshare.com/i/Z_n.svg',
                     id:2,
                     rowvalue: false,
-                    linkUrl : 'sales'
+                    linkUrl : 'bills'
                 },
                 {
                     title: 'Settings ',
@@ -29,11 +29,11 @@ class Directory extends React.Component{
                     linkUrl : 'settings'
                 },
                 {
-                    title: 'Add Vendor ',
-                    imageUrl: 'https://svgshare.com/i/Z_k.svg',
+                    title: 'List Vendor',
+                    imageUrl: 'https://svgshare.com/i/Za7.svg',
                     id:4,
                     rowvalue: false,
-                    linkUrl : 'addVendor'
+                    linkUrl : 'vendorList'
                     
                 },
                 {
