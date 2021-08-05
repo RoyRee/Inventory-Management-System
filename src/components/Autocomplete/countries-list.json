@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Afghanistan",
+        "capital": "Kabul",
+        "region": "Asia",
+        "alpha2Code": "AF",
+        "flag": "https://restcountries.eu/data/afg.svg"
+      },
+      {
+        "name": "Algeria",
+        "capital": "Algiers",
+        "region": "Africa",
+        "alpha2Code": "DZ",
+        "flag": "https://restcountries.eu/data/dza.svg"
+      },
+      {
+        "name": "India",
+        "capital": "New Delhi",
+        "region": "Asia",
+        "alpha2Code": "IN",
+        "flag": "https://restcountries.eu/data/ind.svg"
+      },
+      {
+        "name": "Pakistan",
+        "capital": "Islamabad",
+        "region": "Asia",
+        "alpha2Code": "PK",
+        "flag": "https://restcountries.eu/data/pak.svg"
+      },
+      {
+        "name": "Nepal",
+        "capital": "Kathmandu",
+        "region": "Asia",
+        "alpha2Code": "NP",
+        "flag": "https://restcountries.eu/data/npl.svg"
+      },
+      {
+        "name": "Bhutan",
+        "capital": "Thimphu",
+        "region": "Asia",
+        "alpha2Code": "BT",
+        "flag": "https://restcountries.eu/data/btn.svg"
+      },
+      {
+        "name": "United Arab Emirates",
+        "capital": "Abu Dhabi",
+        "region": "Asia",
+        "alpha2Code": "AE",
+        "flag": "https://restcountries.eu/data/are.svg"
+      },
+      {
+        "name": "Australia",
+        "capital": "Canberra",
+        "region": "Oceania",
+        "alpha2Code": "AU",
+        "flag": "https://restcountries.eu/data/aus.svg"
+      },
+      {
+        "name": "United States of America",
+        "capital": "Washington, D.C.",
+        "region": "Americas",
+        "alpha2Code": "US",
+        "flag": "https://restcountries.eu/data/usa.svg"
+      }
+]
