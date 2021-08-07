@@ -1,0 +1,4 @@
+.search-listitemdiv{
+    display: flex;
+    justify-content:space-between;
+}
