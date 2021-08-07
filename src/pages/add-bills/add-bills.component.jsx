@@ -1,8 +1,6 @@
 import React from 'react';
 import './add-bills.styles.css';
-import TextField from '@material-ui/core/TextField';
- import Autocomplete from '@material-ui/lab/Autocomplete';
-// import ProductRow from '../../components/product-row/product-row.component';
+ import ProductRow from '../../components/product-row/product-row.component';
 
 
 
@@ -13,21 +11,43 @@ class AddBills extends React.Component{
         this.state={
             ProductDetails:[
                 
-                    { title: 'Harmonium', Price: 200000,Quantity:100 },
-                    { title: 'Guitar', Price: 200000,Quantity:100 },
-                    { title: 'Keyboard', Price: 200000,Quantity:100 },
-                    { title: 'Tabla', Price: 200000,Quantity:100 }
+                    { title: 'Harmonium', Price: 200000,Quantity:100,id:1 },
+                    { title: 'Guitar', Price: 200000,Quantity:100,id:2 },
+                    { title: 'Keyboard', Price: 200000,Quantity:100 ,id:3},
+                    { title: 'Tabla', Price: 200000,Quantity:100,id:4 }
                 
             ],
-            msg:''
+            InputTextvalue: [
+                {id:1 ,value:'' },
+                {id:2 ,value:'' },
+                {id:3 ,value:'' },
+                {id:4 ,value:'' }
+            ]
         }
+        this.Addrow = this.Addrow.bind(this);
+    }
+
+     Addrow (event){
+        event.preventDefault();
+        this.setState(state =>{
+            const newProduct = state.ProductDetails.push({ title: '', Price: '',Quantity:'',id: state.ProductDetails.length +1 });
+            const newInputText=state.InputTextvalue.push({id:state.ProductDetails.length+1});
+        
+            return {
+                newProduct,newInputText
+            };
+        });
+    };
+
+
+    handleChange = (event) =>{
+        console.log(event); 
+        this.setState({value: event.target.value})
     }
 
 
-    handleCallback =(childData) =>{
-        this.setState({msg:childData})
-    }
 
+   
     render(){
 
         // const {ProductDetails} =this.state; 
@@ -36,19 +56,21 @@ class AddBills extends React.Component{
         //         data.title
         //     )
         // });
+
+        
         return(
             
             <div className="container">
                 <h1 className="text-center">Add Bills</h1>
                  <form>
                         <label>Vendor Name</label>
-                        {/* <select className="form-select" aria-label="select Vendor">
-                        <option selected>Vendor Name</option>
-                            <input type="text" />                       
+                        <select className="form-select" aria-label="select Vendor">
+                        <option defaultValue>Vendor Name</option>
+                            {/* <input type='' />                        */}
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>    
-                        </select> */}
+                        </select>
                         
                         <div className="row">
                             <div className="col">
@@ -61,17 +83,16 @@ class AddBills extends React.Component{
                             </div>
                         </div>
                         
-                        <div className="row">
-                            
-                            <div className="col">
+                        <div className="row">                            
+                           <div className="col">
                             <label>Payment Terms</label>
-                            {/* <select className="form-select" aria-label="Payment Terms">
-                                <option selected>Payment Terms</option>
-                                    <input type="text" />                       
+                            <select className="form-select" aria-label="Payment Terms">
+                                <option defaultValue>Payment Terms</option>
+                                    {/* <input type="text" />                        */}
                                     <option value="1">Prepaid</option>
                                     <option value="2">Credit</option>
                                     <option value="3">Advance</option>    
-                            </select> */}
+                            </select>
                             </div>
                             <div className="col">
                                 <label>Delivered Date</label>
@@ -84,13 +105,23 @@ class AddBills extends React.Component{
                         <thead>
                             <tr>
                             <th scope="col">#</th>
-                            <th scope="col">vendor Name</th>
-                            <th scope="col">Phone Number</th>
-                            <th scope="col">Bank Name </th>
-                            <th scope="col"> Recent Bill Date</th>
-                            <th scope="col">Balance</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity </th>
                             </tr>
                         </thead>
+                            <tbody>
+                                {
+                                    this.state.ProductDetails.map(({id, ...otherDetails},)=>{
+                                        return(
+                                            <ProductRow key={id}  value={this.state.InputTextvalue}
+                                            onChangeValue={this.handleChange} {...otherDetails}/>
+                                        )
+                                    })
+                                }
+                               
+                                
+                            </tbody>
                         </table>
                        
                             
@@ -102,7 +133,7 @@ class AddBills extends React.Component{
 
                         
                 </form>
-                <br/>
+                {/* <br/>
                 <div className='auto-div'>
                    
                     { <Autocomplete
@@ -113,7 +144,9 @@ class AddBills extends React.Component{
                                 renderInput={(params) => <TextField {...params} label="Select Product" variant="outlined" />}
                         />
                     }
-              </div>
+              </div> */}
+                       {console.log(this.state.value)}
+                       <button onClick={this.Addrow}>Add new row </button>
                        
 
                           
