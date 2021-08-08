@@ -1,12 +1,14 @@
+
 .search-result{
-    position:absolute;
-    top:52px;
-    width: 30%;
-    max-height:350px;
+    position:relative;
+    top: 5pxpx;
+    width: 100%;
+    max-height:250px;
     overflow-y:auto;
     box-shadow: 0 2px 5px rgba(0,0,0,0.28);
     border-radius: 20px;
     background: transparent;
+
 }
 .search-result::-webkit-scrollbar{
     width:0.30rem;
@@ -42,4 +44,5 @@
     border-color: #d3d5d7;
    
 }
+
 

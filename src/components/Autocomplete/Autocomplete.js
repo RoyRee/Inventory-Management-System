@@ -5,6 +5,8 @@ const Autocomplete =({data})=> {
   const [isVisible, setVisiblity]= useState(false);
   const [search, setSearch]= useState("");
   const [cursor, setCursor]= useState(-1);
+  //
+  const[currStyle,setCurrStyle]=useState("display:none");
 
   const searchContainer = useRef(null);
   const searchResultRef = useRef(null);
@@ -51,9 +53,16 @@ useEffect(() => {
        
     }
   }
-  const showSuggestion = () =>setVisiblity(true);
+  const showSuggestion = () =>{
+    setVisiblity(true);
+    setCurrStyle("display:block");
+  };
 
-  const hideSuggestion = () =>setVisiblity(false);
+  const hideSuggestion = () =>{
+    setVisiblity(false);
+    setCurrStyle("display:none");
+  };
+
 
   const keyboardNavigation = e => {
     if (e.key === "ArrowDown") {
@@ -79,7 +88,7 @@ useEffect(() => {
   
 
   return (
-    <div ref={searchContainer}>
+    <div className="autocompletetotal" ref={searchContainer}>
       <input
       type="text"
       name="search"
@@ -94,7 +103,7 @@ useEffect(() => {
 
  
       <div className={`search-result ${ 
-              isVisible ? "visible" : "invisible"}`}
+              isVisible ? "d-block" : "d-none"}`}
        >
          
             <ul className="list-group" ref={searchResultRef}>

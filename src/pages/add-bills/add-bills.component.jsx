@@ -44,7 +44,7 @@ class AddBills extends React.Component{
             <div className="container">
                 <h1 className="text-center">Add Bills</h1>
                 <div className='card shadow p-3 mb-5 bg-white rounded' id='card-vendor-div'>
-                 <form>
+                    <form>
                         <label>Vendor Name</label>
                         <select className="form-select" aria-label="select Vendor">
                         <option defaultValue>Vendor Name</option>
@@ -84,40 +84,36 @@ class AddBills extends React.Component{
                         <div className='table-container'>
                     
 
-                    <table className="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                            <th scope="col">SL</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col">Model#</th>                            
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Price</th>
-                            </tr>
-                        </thead>
-                            <tbody>
-                                {
-                                    this.state.ProductDetails.map(({id})=>{
-                                        
-                                        return(
+                            <table className="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">SL</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Model#</th>                            
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        this.state.ProductDetails.map(({id})=>{
                                             
-                                            <ProductRow key={id} 
-                                            data={countriesList} rowCount={id}    /> 
-                                            
-                                              )
-                                    })
-                                }
+                                            return(
+                                                
+                                                <ProductRow key={id} 
+                                                data={countriesList} rowCount={id}    /> 
+                                                
+                                                )
+                                        })
+                                    }
 
-                                
-                           </tbody>
-                        </table>
-                        <button className='button' id='btn-add-row' onClick={this.Addrow}>+  </button>
-                     </div>
-                     
-
-
-                        <button className='button' >Save</button>
-                                              
-                </form>
+                                    
+                                </tbody>
+                            </table>
+                            <button className='button' id='btn-add-row' onClick={this.Addrow}>+  </button>
+                        </div>
+                        <button className='button' >Save</button>                        
+                    </form>
                 </div>
            
             </div>
