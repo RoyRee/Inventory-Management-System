@@ -82,7 +82,7 @@ useEffect(() => {
     if (e.key === "Enter" && cursor > 0) {
         setSearch(suggestions[cursor].name);
         hideSuggestion();
-    }
+    } 
   };
   
   

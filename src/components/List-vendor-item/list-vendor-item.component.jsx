@@ -12,7 +12,7 @@ const ListVendorItem=({id,vendorName,phoneNumber,vendorBank,balance,recentBill})
                     <td>{recentBill}</td>
                     <td>{balance}</td>
                 </tr>
-
+    
     </>
 
 )

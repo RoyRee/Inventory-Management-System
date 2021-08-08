@@ -32,19 +32,19 @@ class AddBills extends React.Component{
     };
 
 
- 
-
-
    
     render(){
 
         
         return(
+            <>
+            <h1 className="text-center">Add Bills</h1>
             
-            <div className="container">
-                <h1 className="text-center">Add Bills</h1>
-                <div className='card shadow p-3 mb-5 bg-white rounded' id='card-vendor-div'>
-                    <form>
+            <div className='card shadow p-3 mb-5 bg-white rounded' id='card-vendor-div'>
+             <div className="container">
+                
+               
+                    <form onSubmit={e=> {e.preventDefault();}}>
                         <label>Vendor Name</label>
                         <select className="form-select" aria-label="select Vendor">
                         <option defaultValue>Vendor Name</option>
@@ -81,10 +81,10 @@ class AddBills extends React.Component{
                         </div>
                         <br/>   
               
-                        <div className='table-container'>
+                        <div className='table-container table-responsive'>
                     
 
-                            <table className="table table-striped table-hover">
+                            <table className="table table-striped table-hover ">
                                 <thead>
                                     <tr>
                                     <th scope="col">SL</th>
@@ -105,18 +105,21 @@ class AddBills extends React.Component{
                                                 
                                                 )
                                         })
-                                    }
-
-                                    
+                                    }                                  
                                 </tbody>
                             </table>
-                            <button className='button' id='btn-add-row' onClick={this.Addrow}>+  </button>
-                        </div>
-                        <button className='button' >Save</button>                        
+                            <button className='button' id='btn-add-row' onClick={e=>this.Addrow(e)}>+</button>        
+                            
+                        </div>        
+                         <button className='button' onSubmit={e=>e.preventDefault()}  >Save</button>                      
                     </form>
-                </div>
-           
+                    
+                    
+                                   
+                
             </div>
+            </div>
+            </>
         )
     }
 
