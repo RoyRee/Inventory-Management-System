@@ -38,8 +38,10 @@ useEffect(() => {
     if(!search) return data;
     setCursor(-1);
     scrollIntoView(0);
-    return data.filter(item =>
-      item.name.toLowerCase().includes(search.toLowerCase())
+    return data.filter(item =>    
+      item.name.toLowerCase().includes(search.toLowerCase())  
+      || item.region.toLowerCase().includes(search.toLocaleLowerCase())
+    
   );
   },[data,search]);
 
@@ -82,7 +84,7 @@ useEffect(() => {
       type="text"
       name="search"
       className="search-bar"
-      autocomplete="off"
+      autoComplete="off"
       value={search}
       onClick={showSuggestion}
       onChange={e=> setSearch(e.target.value)}

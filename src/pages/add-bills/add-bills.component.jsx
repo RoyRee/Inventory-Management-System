@@ -1,6 +1,8 @@
 import React from 'react';
 import './add-bills.styles.css';
- import ProductRow from '../../components/product-row/product-row.component';
+import ProductRow from '../../components/product-row/product-row.component';
+import countriesList from '../../components/Autocomplete/countries-list.json';
+
 
 
 
@@ -11,17 +13,9 @@ class AddBills extends React.Component{
         this.state={
             ProductDetails:[
                 
-                    { title: 'Harmonium', Price: 200000,Quantity:100,id:1 },
-                    { title: 'Guitar', Price: 200000,Quantity:100,id:2 },
-                    { title: 'Keyboard', Price: 200000,Quantity:100 ,id:3},
-                    { title: 'Tabla', Price: 200000,Quantity:100,id:4 }
+                    { title: '', Price: '',Quantity:'',id:1 }
+                    
                 
-            ],
-            InputTextvalue: [
-                {id:1 ,value:'' },
-                {id:2 ,value:'' },
-                {id:3 ,value:'' },
-                {id:4 ,value:'' }
             ]
         }
         this.Addrow = this.Addrow.bind(this);
@@ -31,42 +25,29 @@ class AddBills extends React.Component{
         event.preventDefault();
         this.setState(state =>{
             const newProduct = state.ProductDetails.push({ title: '', Price: '',Quantity:'',id: state.ProductDetails.length +1 });
-            const newInputText=state.InputTextvalue.push({id:state.ProductDetails.length+1});
-        
             return {
-                newProduct,newInputText
+                newProduct
             };
         });
     };
 
 
-    handleChange = (event) =>{
-        console.log(event); 
-        this.setState({value: event.target.value})
-    }
-
+ 
 
 
    
     render(){
-
-        // const {ProductDetails} =this.state; 
-        // const data = ProductDetails.map((data)=>{
-        //     return(
-        //         data.title
-        //     )
-        // });
 
         
         return(
             
             <div className="container">
                 <h1 className="text-center">Add Bills</h1>
+                <div className='card shadow p-3 mb-5 bg-white rounded' id='card-vendor-div'>
                  <form>
                         <label>Vendor Name</label>
                         <select className="form-select" aria-label="select Vendor">
                         <option defaultValue>Vendor Name</option>
-                            {/* <input type='' />                        */}
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>    
@@ -88,7 +69,6 @@ class AddBills extends React.Component{
                             <label>Payment Terms</label>
                             <select className="form-select" aria-label="Payment Terms">
                                 <option defaultValue>Payment Terms</option>
-                                    {/* <input type="text" />                        */}
                                     <option value="1">Prepaid</option>
                                     <option value="2">Credit</option>
                                     <option value="3">Advance</option>    
@@ -100,57 +80,46 @@ class AddBills extends React.Component{
                             </div>
                         </div>
                         <br/>   
+              
+                        <div className='table-container'>
+                    
 
                     <table className="table table-striped table-hover">
                         <thead>
                             <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">SL</th>
                             <th scope="col">Product Name</th>
+                            <th scope="col">Model#</th>                            
+                            <th scope="col">Quantity</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Quantity </th>
                             </tr>
                         </thead>
                             <tbody>
                                 {
-                                    this.state.ProductDetails.map(({id, ...otherDetails},)=>{
+                                    this.state.ProductDetails.map(({id})=>{
+                                        
                                         return(
-                                            <ProductRow key={id}  value={this.state.InputTextvalue}
-                                            onChangeValue={this.handleChange} {...otherDetails}/>
-                                        )
+                                            
+                                            <ProductRow key={id} 
+                                            data={countriesList} rowCount={id}    /> 
+                                            
+                                              )
                                     })
                                 }
-                               
+
                                 
-                            </tbody>
+                           </tbody>
                         </table>
-                       
-                            
-                        {/* {console.log(this.state.ProductDetails)}
-                            <ProductRow Data={this.props.ProductDetails}/>
-                             */}
-                        
-                    
+                        <button className='button' id='btn-add-row' onClick={this.Addrow}>+  </button>
+                     </div>
+                     
 
-                        
+
+                        <button className='button' >Save</button>
+                                              
                 </form>
-                {/* <br/>
-                <div className='auto-div'>
-                   
-                    { <Autocomplete
-                                id="select-product"
-                                options={this.state.ProductDetails}
-                                getOptionLabel={(option) => option.title}
-                                 style={{ width:400  }}
-                                renderInput={(params) => <TextField {...params} label="Select Product" variant="outlined" />}
-                        />
-                    }
-              </div> */}
-                       {console.log(this.state.value)}
-                       <button onClick={this.Addrow}>Add new row </button>
-                       
-
-                          
-
+                </div>
+           
             </div>
         )
     }

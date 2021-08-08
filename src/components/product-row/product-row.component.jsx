@@ -1,32 +1,28 @@
 import React from 'react';
-import { Component } from 'react';
 import './product-row.styles.css';
+import AutoComplete from '../Autocomplete/Autocomplete';
 
 
-class  ProductRow extends Component{
-
-    render(){
-
-            const{id,Price,Quantity,onChangeValue,value} = this.props;
+const  ProductRow = (data)=> {
             
         return(
-            <>
+            
+            <>                  
                     <tr>
-                    <th scope="row">{id}</th>
-                    
-                    <td><input type="text" id={id} onChange={onChangeValue} /></td>
-                    <td>{Price}</td>
-                    <td>{Quantity}</td>
-                   
+                    <th scope="row">{data.rowCount}</th>
+                    <td><AutoComplete data={data.data} /></td>
+                    <td><AutoComplete data={data.data} /></td>
+                    <td><input type='number'/></td>
+                    <td><input type='number'/></td>
+
                    </tr>
          </>
 
         )
-    }
+    
   
 }
 
 export default ProductRow;
 
 
-{/*  */}

@@ -58,7 +58,7 @@
       {
         "name": "United States of America",
         "capital": "Washington, D.C.",
-        "region": "Americas",
+        "region": "NorthAmericas",
         "alpha2Code": "US",
         "flag": "https://restcountries.eu/data/usa.svg"
       }
