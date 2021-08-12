@@ -6,7 +6,7 @@ const Autocomplete =({data})=> {
   const [search, setSearch]= useState("");
   const [cursor, setCursor]= useState(-1);
   //
-  const[currStyle,setCurrStyle]=useState("display:none");
+  
 
   const searchContainer = useRef(null);
   const searchResultRef = useRef(null);
@@ -55,12 +55,10 @@ useEffect(() => {
   }
   const showSuggestion = () =>{
     setVisiblity(true);
-    setCurrStyle("display:block");
   };
 
   const hideSuggestion = () =>{
     setVisiblity(false);
-    setCurrStyle("display:none");
   };
 
 
