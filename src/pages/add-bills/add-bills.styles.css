@@ -1,0 +1,26 @@
+#select-product{
+    width: 2000 ;
+}
+.button-positions{
+    display: flex;
+    justify-content:center;
+}
+#btn-add-row{
+    margin-top:19%;
+    margin-left:5px;
+    max-height: 50px;
+    border-radius: 10px;
+    border: 0;
+}
+/* #card-vendor-div{
+    width:fit-content;
+} */
+
+
+.table-container{
+    display: flex;
+    align-content: space-between;
+    align-items: flex-end;
+    
+}
+

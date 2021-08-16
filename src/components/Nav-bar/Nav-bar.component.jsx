@@ -1,5 +1,5 @@
 import React from 'react';
-import './nav-bar.styles.css';
+import './Nav-bar.styles.css';
 import NavItem from '../Nav-item/nav-item.component';
 import {ReactComponent as ReactLogo} from '../../assests/logo.svg';
 
@@ -11,16 +11,16 @@ class NavBar extends React.Component{
             this.state={
                 navItemData : [
                     {
-                        title: 'Vendors List ',
+                        title: 'Add Vendors',
                         imageUrl: 'https://svgshare.com/i/Za7.svg',
                         id:1,
                         linkUrl : 'vendor' 
                     },
                     {
-                        title: 'Sales ',
+                        title: 'Add Bill ',
                         imageUrl: 'https://svgshare.com/i/Z_n.svg',
                         id:2,
-                        linkUrl : 'sales'
+                        linkUrl : 'bills'
                     },
                     {
                         title: 'Settings ',
@@ -29,10 +29,10 @@ class NavBar extends React.Component{
                         linkUrl : 'settings'
                     },
                     {
-                        title: 'Add Benificiary ',
+                        title: 'List Vendors ',
                         imageUrl: 'https://svgshare.com/i/Z_k.svg',
                         id:4,
-                        linkUrl : 'addBenificiary'
+                        linkUrl : 'vendorList'
                         
                     },
                     {
