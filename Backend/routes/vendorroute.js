@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {addVendor} = require('../controller/vendorController');
 
-router.get('/addvendor',addVendor);
+router.post('/addvendor',addVendor);
 
 
 module.exports = router;

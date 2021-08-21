@@ -8,8 +8,7 @@ import AddBills from './pages/add-bills/add-bills.component';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="App">     
       <Switch>
       <Route exact  path='/' component={Homepage}/>
       <Route exact  path='/vendor' component={AddVendor}/>
